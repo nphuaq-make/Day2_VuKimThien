@@ -3,6 +3,7 @@ using System.Text.Encodings.Web;
 
 namespace Day2_VuKimThien.Controllers
 {
+    [Route("test")]
     public class HelloController : Controller
     {
         [HttpGet("Trang_chu")]
