@@ -5,14 +5,26 @@ namespace Day2_VuKimThien.Controllers
 {
     public class HelloController : Controller
     {
-        public string Index()
+        [HttpGet("Trang_chu")]
+        public IActionResult Index()
         {
-            return "Hello, World!";
+            return View();
         }
-
-        public string Welcome(string name, int numTimes = 1)
+        [HttpGet("Hello")]
+        public IActionResult Welcome(string name = "Thien", int ID = 1)
         {
-            return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
+            ViewData["name"] = "Hello " + name;
+            ViewData["Id"] = ID;
+            return View();
+        }
+        [HttpGet("Hi")]
+        public IActionResult Hi(int ID =1 , string name = "Vu Kim Thien" , int age = 22)
+        {
+            ViewBag.ID = ID; 
+            ViewBag.Name = name;
+            ViewBag.Age = age;
+
+            return View();
         }
 
     }

@@ -1,0 +1,13 @@
+﻿@{
+	ViewData["Title"] = "Hello";
+}
+
+<h2>Hi @ViewBag.Name</h2>
+<h2>ID : @ViewBag.Id</h2>
+@for (int i = 0; i < ViewBag.Age; i+=5)
+{
+	<h3>tuoi cua toi la: @ViewBag.Age</h3>
+}
+
+
+
